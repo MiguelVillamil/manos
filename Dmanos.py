@@ -7,8 +7,9 @@ from Emoji_bar import emojiBar as eb
 
 pygame.init()
 pygame.mixer.init()
-sonido_fondo = pygame.mixer.Sound("Blablabla.mp3")
-pygame.mixer.Sound.play(sonido_fondo)
+pygame.mixer.music.load("Blablabla.mp3")
+pygame.mixer.music.play(-1)
+pygame.mixer.music.set_volume(0.1)
 
 class detector():
     
