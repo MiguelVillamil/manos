@@ -27,6 +27,7 @@ Por ejemplo, el maximo puntaje de este jugador fue:
 ## Requisitos
 ¿Qué necesitas para jugar?:
  * python3.9.+
+ * pygame
  * mediapipe
  * imutils
  * cv2
