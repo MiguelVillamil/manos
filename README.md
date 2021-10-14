@@ -10,7 +10,7 @@ Al ejecutar el programa, una ventana o frame aparece con 3 secciones:
 * Emojis que el jugador tendrá que imitar.
 * Imagen de la cámara del jugador.
 
-![Primera reacción del programa](https://cdn.discordapp.com/attachments/618970096815046659/898065149481615370/unknown.png)
+![Primera reacción del programa](https://cdn.discordapp.com/attachments/618970096815046659/898267902430556232/unknown.png)
 
 Apenas aparece esta ventana el jugador puede empezar a jugar, esto al **recrear** con sus manos los emojis que vayan apareciendo en la barra superior (pueden salir 7 emojis de manera
  aleatoria), cada vez que recrea un emoji de manera exitosa se le otorgan los puntos correspondientes de la siguiente manera:
