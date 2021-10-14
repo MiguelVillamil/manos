@@ -21,13 +21,13 @@ Apenas aparece esta ventana el jugador puede empezar a jugar, esto al **recrear*
 ![Primera reacción del programa](https://cdn.discordapp.com/attachments/618970096815046659/898064838645940245/unknown.png)
 
 ## Requisitos
-¿Qué necesitas para juagar?
-*python3.9.+
-*mediapipe
-*imutils
-*cv2
-*una webcam
-*una mano
+¿Qué necesitas para jugar?:
+ *python3.9.+
+ *mediapipe
+ *imutils
+ *cv2
+ *una webcam
+ *una mano
 
 ## ¿Cómo se diferencia cada gesto?
 1. Cabe resaltar que para reconocer las manos primero se realizó un tratado de imagenes el cual fue:
