@@ -143,21 +143,33 @@ class detector():
         y14 = int(hand_puntos.landmark[self.mp_hands.HandLandmark.RING_FINGER_PIP].y * height)
         
         y18 = int(hand_puntos.landmark[self.mp_hands.HandLandmark.PINKY_PIP].y * height)
+
+        y6 = int(hand_puntos.landmark[self.mp_hands.HandLandmark.INDEX_FINGER_PIP].y * height)
+
+        #punta de los dedos 
         
-        #meñique 
+        y8 = int(hand_puntos.landmark[self.mp_hands.HandLandmark.INDEX_FINGER_TIP].y * height)
         
-        x18 = int(hand_puntos.landmark[self.mp_hands.HandLandmark.PINKY_PIP].y * height)
-        x20 = int(hand_puntos.landmark[self.mp_hands.HandLandmark.PINKY_TIP].y * height)
+        y12 = int(hand_puntos.landmark[self.mp_hands.HandLandmark.MIDDLE_FINGER_TIP].y * height)
+        
+        y16 = int(hand_puntos.landmark[self.mp_hands.HandLandmark.RING_FINGER_TIP].y * height)
+
+        y20 = int(hand_puntos.landmark[self.mp_hands.HandLandmark.PINKY_TIP].y * height)
+        
+        #meÃ±ique 
+        
+        x18 = int(hand_puntos.landmark[self.mp_hands.HandLandmark.PINKY_PIP].y * width)
+        x20 = int(hand_puntos.landmark[self.mp_hands.HandLandmark.PINKY_TIP].y * width)
         
         #PULGAR 
         
         y4 = int(hand_puntos.landmark[self.mp_hands.HandLandmark.THUMB_TIP].y * height)
+        y2 = int(hand_puntos.landmark[self.mp_hands.HandLandmark.THUMB_MCP].y * height)
+        y3 = int(hand_puntos.landmark[self.mp_hands.HandLandmark.THUMB_IP].y * height)
         
-        y3 = int(hand_puntos.landmark[self.mp_hands.HandLandmark.THUMB_MCP].y * height)
         
         
-        
-        if(y5<y9 and y5<y13 and y5<y17 and y4<y3 and y5<y10 and y5<y14 and y5<y18):
+        if( y20<y18 and y6<y8 and y10<y12 and y14<y16 and y4<y3):
             if (tipo=="Left"):
                 if(x18>x20):    
                     print("nea")    
@@ -167,7 +179,7 @@ class detector():
             
             elif (tipo=="Right"):
                 
-                if(x18<x20):
+                if(x18>x20):
                     print("nea")    
                     cv2.putText(self.image, "nea", (int(0.5*width), int(0.9*height)),
                         cv2.FONT_HERSHEY_PLAIN, 3, (255,0, 0), 3)
