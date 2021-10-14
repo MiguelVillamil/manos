@@ -20,7 +20,7 @@ Apenas aparece esta ventana el jugador puede empezar a jugar, esto al **recrear*
 
 ![Primera reacción del programa](https://cdn.discordapp.com/attachments/618970096815046659/898251214079295538/unknown.png)
 
-El maximo puntaje del juego es: 
+Por ejemplo, el maximo puntaje de este jugador fue:
 
 ![Primera reacción del programa](https://cdn.discordapp.com/attachments/618970096815046659/898251297520754748/unknown.png)
 
