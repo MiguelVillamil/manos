@@ -12,7 +12,7 @@ class detector():
         self.mp_drawing = mp.solutions.drawing_utils
         self.mp_hands = mp.solutions.hands
         self.image = None
-        self.barra = eb([6,7,3,7,5])
+        self.barra = eb([1,2,3,4,5])
         self.imageBarra= self.barra.mostrarBarra()
         self.cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
         
@@ -25,9 +25,10 @@ class detector():
     
     def mostrarvideo(self,imagen):
         cv2.imshow("image", imagen)
-        if(cv2.waitKey(1) and 0xFF == 27):
+        if(cv2.waitKey(1) & 0xFF == 27):
             self.cap.release()
             cv2.destroyAllWindows
+            return True
             
         
     def hi5(self, hand_puntos,width,height,tipo):
@@ -520,7 +521,8 @@ class detector():
                     self.ok(hand_puntos,width,height,tipoMano)
                     
                     
-            self.mostrarvideo(self.image)        
+            if(self.mostrarvideo(self.image)):
+                break        
     
     
 

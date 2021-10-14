@@ -1,5 +1,5 @@
 import cv2
-
+import random
 
 class emojiBar():
     
@@ -11,6 +11,7 @@ class emojiBar():
         self.emojiList= emojilist
         self.puntos=0
         self.imageBar= None
+        self.ultimo=0
         
         
         self.actualizar()
@@ -51,6 +52,7 @@ class emojiBar():
                 emojiPrint.append(puno)
                 
         barra=cv2.hconcat(emojiPrint)
+        print(type(barra))
         score= cv2.imread("barrapunto.png")
         height, width, _  = score.shape
         cv2.putText(score, "puntos: "+ str(self.puntos), (int(0.05*width), int(0.6*height)),
@@ -65,18 +67,31 @@ class emojiBar():
     def buscaEmoji(self, emojinum):
             escribir=True        
             for x in range (len(self.emojiList)):
-                if (self.emojiList[x] != emojinum and self.emojiList[x] != 0):
+                if (self.emojiList[x] != emojinum and self.emojiList[x] != 0 ):
                     escribir = False
+                    if(emojinum != self.ultimo):
+                        self.puntos=0
                 
                 if self.emojiList[x] == emojinum and escribir == True:
                     escribir=False
+                    self.ultimo = emojinum
                     self.emojiList[x]=0
                     self.puntos=self.puntos+10 
                     
                     print(self.emojiList)
+                    if (self.emojiList==[0,0,0,0,0]):
+                        self.emojiList=self.randomEmoji()
+                        
+                    
             return self.actualizar()        
                     
     
+    def randomEmoji(self):
+        lista = [0] * 5
+        for i in range(5):
+            lista[i] = random.randint(1, 7)
+        return lista
+        
         
     def mostrar(self):
         cv2.imshow("image", self.imageBar)
@@ -89,8 +104,8 @@ class emojiBar():
                  
             
                  
-#barra=emojiBar()
-
+barra=emojiBar()
+#print(barra.randomEmoji())
 
 
 
