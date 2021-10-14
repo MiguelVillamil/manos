@@ -22,12 +22,12 @@ Apenas aparece esta ventana el jugador puede empezar a jugar, esto al **recrear*
 
 ## Requisitos
 ¿Qué necesitas para jugar?:
- *python3.9.+
- *mediapipe
- *imutils
- *cv2
- *una webcam
- *una mano
+ * python3.9.+
+ * mediapipe
+ * imutils
+ * cv2
+ * una webcam
+ * una mano
 
 ## ¿Cómo se diferencia cada gesto?
 1. Cabe resaltar que para reconocer las manos primero se realizó un tratado de imagenes el cual fue:
