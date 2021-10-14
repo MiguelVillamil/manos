@@ -31,4 +31,4 @@ Apenas aparece esta ventana el jugador puede empezar a jugar, esto al **recrear*
   * Convertir las coordenadas de cada punto a pixeles escalando la pantalla y asignándole este valor a diferentes variables separándolas por puntas y mitad de los dedos
   * Reconocer si la mano es derecha o izquierda para la selección del pulgar
   * Evaluar los puntos de rigor que cada gesto tiene para seleccionar si es o no este
-3. Si la posición de manos del jugador es correcto se le sumara en el sistema de puntos el puntaje y así sucesivamente hasta que el usuario falle en algún momento.
+3. Si la posición de manos del jugador es correcta se le sumara en el sistema de puntos el puntaje y así sucesivamente hasta que el usuario falle en algún momento.
