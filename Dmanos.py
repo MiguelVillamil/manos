@@ -2,8 +2,13 @@ import cv2
 import mediapipe as mp
 from mediapipe.python.solutions.drawing_styles import _HAND_LANDMARK_STYLE
 import imutils
+import sys, pygame
 from Emoji_bar import emojiBar as eb 
 
+pygame.init()
+pygame.mixer.init()
+sonido_fondo = pygame.mixer.Sound("Blablabla.mp3")
+pygame.mixer.Sound.play(sonido_fondo)
 
 class detector():
     
@@ -431,7 +436,7 @@ class detector():
         self.cap.release()
         with self.mp_hands.Hands(static_image_mode = True, max_num_hands=1 ) as hands:
     
-            self.image = cv2.imread("mano_ok.jpeg")
+            self.image = cv2.imread("mano_nea.jpeg")
             self.image = imutils.resize(self.image, width= 480)
             self.image = cv2.flip(self.image, 1)
             
