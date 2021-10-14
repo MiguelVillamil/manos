@@ -437,7 +437,7 @@ class detector():
         self.cap.release()
         with self.mp_hands.Hands(static_image_mode = True, max_num_hands=1 ) as hands:
     
-            self.image = cv2.imread("mano_nea.jpeg")
+            self.image = cv2.imread("mano_like.jpeg")
             self.image = imutils.resize(self.image, width= 480)
             self.image = cv2.flip(self.image, 1)
             
