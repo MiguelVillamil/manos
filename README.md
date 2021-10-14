@@ -21,10 +21,14 @@ Apenas aparece esta ventana el jugador puede empezar a jugar, esto al **recrear*
 ![Primera reacción del programa](https://cdn.discordapp.com/attachments/618970096815046659/898064838645940245/unknown.png)
 
 ## ¿Cómo se diferencia cada gesto?
-1. Diferenciar entre mano izquierda y derecha.
-  * 
-2. Extraer las coordenadas de cada punto de la mano en la posicion deseada.
+1. Cabe resaltar que para reconocer las manos primero se realizó un tratado de imagenes el cual fue:
+  * invertir la imagen
+  * convertirla a RGB
+  * escalar a la pantalla con ayuda de imutils
+2. Para el reconocimiento de las manos utilizamos la librería mediapipe. Cada gesto tiene su respectivo método el cual reconoce, diferencia y da la dirección del flujo del programa para el sistema de puntos, para cada método se siguió el siguiente procedimiento:
     ![landmarks](https://mediapipe.readthedocs.io/en/latest/_images/hand_landmarks.png)
-  * Gracias a la libreria mediapipe se pueden modelar las manos como un conjunto de puntos, estos puntos se encuentran en una posicion diferente dependiendo de la forma que la mano
-  tenga en ese momento, con estos puntos se trabajó.
-3. Con las coordenadas, definir cada emoji como un conjunto de coordenadas.
+  * Reconocer las manos
+  * Convertir las coordenadas de cada punto a pixeles escalando la pantalla y asignándole este valor a diferentes variables separándolas por puntas y mitad de los dedos
+  * Reconocer si la mano es derecha o izquierda para la selección del pulgar
+  * Evaluar los puntos de rigor que cada gesto tiene para seleccionar si es o no este
+3. Si la posición de manos del jugador es correcto se le sumara en el sistema de puntos el puntaje y así sucesivamente hasta que el usuario falle en algún momento.
