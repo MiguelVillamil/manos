@@ -13,10 +13,12 @@ class emojiBar():
         self.imageBar= None
         self.ultimo=0
         
+        self.maxpuntos=0
+        
         
         self.actualizar()
         
-    def actualizar(self):
+    def actualizar(self,pierde=False):
         emojiPrint = []
         for emoji in self.emojiList:
             if(emoji==0): #vacio=0
@@ -55,8 +57,12 @@ class emojiBar():
         print(type(barra))
         score= cv2.imread("barrapunto.png")
         height, width, _  = score.shape
-        cv2.putText(score, "puntos: "+ str(self.puntos), (int(0.05*width), int(0.6*height)),
-                        cv2.FONT_HERSHEY_PLAIN, 3, (0,255, 0), 2, ) 
+        if(pierde==False):
+            cv2.putText(score, "puntos: "+ str(self.puntos), (int(0.05*width), int(0.6*height)),
+                        cv2.FONT_HERSHEY_PLAIN, 3, (0,255, 0), 2, )
+        if(pierde==True):
+            cv2.putText(score, "maxpuntos: "+ str(self.maxpuntos), (int(0.05*width), int(0.6*height)),
+                        cv2.FONT_HERSHEY_PLAIN, 3, (0,0, 255), 2, )     
         self.imageBar= cv2.vconcat([score,barra])
         
         
@@ -70,7 +76,19 @@ class emojiBar():
                 if (self.emojiList[x] != emojinum and self.emojiList[x] != 0 ):
                     escribir = False
                     if(emojinum != self.ultimo):
+                        self.ultimo=-1
+                        if(self.maxpuntos<=self.puntos):
+                            self.maxpuntos=self.puntos
+                        
+                        if(self.ultimo!=emojinum and (0 in self.emojiList)):    
+                            self.emojiList=self.randomEmoji()
+                            
+                            
+                            
+                        
                         self.puntos=0
+                        
+                        return self.actualizar(True)
                 
                 if self.emojiList[x] == emojinum and escribir == True:
                     escribir=False
@@ -80,6 +98,7 @@ class emojiBar():
                     
                     print(self.emojiList)
                     if (self.emojiList==[0,0,0,0,0]):
+                        self.puntos=self.puntos+100 
                         self.emojiList=self.randomEmoji()
                         
                     
