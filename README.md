@@ -18,7 +18,20 @@ Apenas aparece esta ventana el jugador puede empezar a jugar, esto al **recrear*
 * Si termina todos los emoji se le dan 100 puntos de bonificación.
 * Si no recrea el emoji con exactitud el juego se acaba y pierde sus puntos.
 
-![Primera reacción del programa](https://cdn.discordapp.com/attachments/618970096815046659/898064838645940245/unknown.png)
+![Primera reacción del programa](https://cdn.discordapp.com/attachments/618970096815046659/898251214079295538/unknown.png)
+
+Por ejemplo, el maximo puntaje de este jugador fue:
+
+![Primera reacción del programa](https://cdn.discordapp.com/attachments/618970096815046659/898251297520754748/unknown.png)
+
+## Requisitos
+¿Qué necesitas para jugar?:
+ * python3.9.+
+ * mediapipe
+ * imutils
+ * cv2
+ * una webcam
+ * una mano
 
 ## ¿Cómo se diferencia cada gesto?
 1. Cabe resaltar que para reconocer las manos primero se realizó un tratado de imagenes el cual fue:
